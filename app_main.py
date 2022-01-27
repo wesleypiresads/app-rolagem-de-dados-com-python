@@ -16,6 +16,56 @@ def roll_dice(numero_dados):
         roll_results.append(roll)
     return roll_results
 
+# Diagrama de ASCII (Esse diagrama foi copiado para facilitar o desenvolvimento)
+DICE_ART = {
+    1: (
+        "┌─────────┐",
+        "│         │",
+        "│    ●    │",
+        "│         │",
+        "└─────────┘",
+    ),
+    2: (
+        "┌─────────┐",
+        "│  ●      │",
+        "│         │",
+        "│      ●  │",
+        "└─────────┘",
+    ),
+    3: (
+        "┌─────────┐",
+        "│  ●      │",
+        "│    ●    │",
+        "│      ●  │",
+        "└─────────┘",
+    ),
+    4: (
+        "┌─────────┐",
+        "│  ●   ●  │",
+        "│         │",
+        "│  ●   ●  │",
+        "└─────────┘",
+    ),
+    5: (
+        "┌─────────┐",
+        "│  ●   ●  │",
+        "│    ●    │",
+        "│  ●   ●  │",
+        "└─────────┘",
+    ),
+    6: (
+        "┌─────────┐",
+        "│  ●   ●  │",
+        "│  ●   ●  │",
+        "│  ●   ●  │",
+        "└─────────┘",
+    ),
+}
+
+DIE_HEIGHT = len(DICE_ART[1])
+DIE_WIDTH = len(DICE_ART[1][0])
+DICE_FACE_SEPARATOR = ' '
+
 # Validando a entrada de dados do usuario
 entrada_numero_dados = input('Quantos dados você quer jogar escolha de [1 a 6] ')
 # Função (parse_input) Pegando a entrada do usuário como string verificando se inteiro e retornando inteiro
