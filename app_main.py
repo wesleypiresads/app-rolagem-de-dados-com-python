@@ -8,7 +8,9 @@ def parse_input(input_string):
         raise SystemExit(1)
 
 def roll_dice(numero_dados):
+    #function retorna uma lista de inteiros
     roll_results = []
+    #Procurando uma lista de inteiros em um intervalo de 1 a 6
     for _ in range(numero_dados):
         roll = random.randint(1, 6)
         roll_results.append(roll)
@@ -21,4 +23,5 @@ numero_dados = parse_input(entrada_numero_dados)
 
 roll_results = roll_dice(numero_dados)
 
-print(roll_results)
+# Linha para testar o aplicativo durante o desenvolvimento
+#print(roll_results)
