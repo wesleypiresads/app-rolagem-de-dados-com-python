@@ -16,6 +16,26 @@ def roll_dice(numero_dados):
         roll_results.append(roll)
     return roll_results
 
+def gerar_diagrama_dados(dados_valor):
+
+    lados_dados = []
+    for valor in dados_valor:
+        lados_dados.append(DICE_ART[valor])
+
+    lados_dados_linha = []
+    for linha_idx in range(DIE_HEIGHT):
+        linha_componentes = []
+        for die in lados_dados:
+            linha_componentes.append(die[linha_idx])
+        linha_string = DICE_FACE_SEPARATOR.join(linha_componentes)
+        lados_dados_linha.append(linha_string)
+
+    width = len(lados_dados_linha[0])
+    diagrama_header = 'RESULTS'.center(width, '~')
+
+    lados_dados_diagrama = '\n'.join([diagrama_header] + lados_dados_linha)
+    return lados_dados_diagrama
+
 # Diagrama de ASCII (Esse diagrama foi copiado para facilitar o desenvolvimento)
 DICE_ART = {
     1: (
